@@ -1,5 +1,5 @@
 There are two options for you to run the AtStella CLI by:
-1. Downloading the pre-compiled executable binary file, you can find it in the [releases](https://github.com/incognitochain/incognito-cli/releases).
+1. Downloading the pre-compiled executable binary file, you can find it in the [releases](https://github.com/LampardNguyen234/compound-cli/releases).
 2. Compiling your own executable binary file from source as in the Installation instruction above.
 
 Then execute the binary file with the following commands.
@@ -27,11 +27,11 @@ COMMANDS:
      compound, cmpd  Manage compound functionality
 
 GLOBAL OPTIONS:
-   --host value   Tendermint RPC host
-   --port value   Tendermint RPC port
-   --testnet      Whether to use testnet (default: false)
-   --help, -h     show help (default: false)
-   --version, -v  print the version (default: false)
+   --host value           Tendermint RPC host
+   --port value           Tendermint RPC port
+   --testnet, --test, -t  Whether to use testnet (default: false)
+   --help, -h             show help (default: false)
+   --version, -v          print the version (default: false)
 
 COPYRIGHT:
    This tool is developed and maintained by the AtStella Devs Team. It is free for anyone. However, any commercial usages should be acknowledged by the AtStella Devs Team.
@@ -73,11 +73,11 @@ USAGE:
    OPTIONAL flags are denoted by a [] bracket.
 
 OPTIONS:
-   --privateKey value, -p value, --prvKey value  The Astra private key [$PRIVATE_KEY]
-   --operator value                              The address of the operator (default: "astra10y496hn28u6j8z80wuqvclta4jt9zcp7jfzqwa")
-   --allowedList bonded, --allowed bonded        The list of allowed validator addresses (default: all bonded validators)
-   --deniedList value, --denied value            The list of denied validator addresses (default: no denied validators)
-   --expired value, --exp value                  The expiration duration (e.g, 1000s) (default: "87600h0m0s")
+   --privateKey value, -p value, --prvKey value                                                                The Astra private key [$PRIVATE_KEY]
+   --operator value                                                                                            The address of the operator (default: "astra10y496hn28u6j8z80wuqvclta4jt9zcp7jfzqwa")
+   --allowedList bonded, --allowed bonded                                                                      The list of allowed validator addresses (default: all bonded validators). Example: `--allowed VALIDATOR_1 --allowed VALIDATOR_2`
+   --deniedList --denied VALIDATOR_1 --denied VALIDATOR_2, --denied --denied VALIDATOR_1 --denied VALIDATOR_2  The list of denied validator addresses (default: no denied validators). Example: --denied VALIDATOR_1 --denied VALIDATOR_2
+   --expired value, --exp value                                                                                The expiration duration (e.g, 1000s) (default: "87600h0m0s")
    
 ```
 

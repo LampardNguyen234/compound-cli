@@ -48,7 +48,10 @@ func main() {
 	sort.Sort(cli.CommandsByName(app.Commands))
 
 	var err error
-	//_ = generateDocsToFile(app, "commands.md") // un-comment this line to generate docs for the app's commands.
+	//err = generateDocsToFile(app, "commands.md") // un-comment this line to generate docs for the app's commands.
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
 	err = app.Run(os.Args)
 	if err != nil {
 		log.Fatal(err)
