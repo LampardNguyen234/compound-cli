@@ -67,13 +67,13 @@ var defaultFlags = map[string]cli.Flag{
 	allowedListFlag: &cli.StringSliceFlag{
 		Name:     allowedListFlag,
 		Aliases:  aliases[allowedListFlag],
-		Usage:    "The list of allowed validator addresses (default: all `bonded` validators). Example: `--allowed VALIDATOR_1 --allowed VALIDATOR_2`",
+		Usage:    "The list of allowed validator addresses (default: all `bonded` validators). Example: --allowed VALIDATOR_1 --allowed VALIDATOR_2",
 		Required: false,
 	},
 	deniedListFlag: &cli.StringSliceFlag{
 		Name:     deniedListFlag,
 		Aliases:  aliases[deniedListFlag],
-		Usage:    "The list of denied validator addresses (default: no denied validators). Example: `--denied VALIDATOR_1 --denied VALIDATOR_2`",
+		Usage:    "The list of denied validator addresses (default: no denied validators). Example: --denied VALIDATOR_1 --denied VALIDATOR_2",
 		Required: false,
 	},
 	expiredFlag: &cli.StringFlag{

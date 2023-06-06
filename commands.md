@@ -10,7 +10,7 @@ NAME:
    atstella-cli - A simple CLI application for doing weird stuff.
 
 USAGE:
-   cli [global options] command [command options] [arguments...]
+   compound-cli [global options] command [command options] [arguments...]
 
 VERSION:
    v0.0.1
@@ -48,7 +48,7 @@ This command helps perform compound-related actions
 ```shell
 $ atstella-cli help compound
 NAME:
-   cli compound - Manage compound functionality
+   compound-cli compound - Manage compound functionality
 
 USAGE:
    compound
@@ -73,11 +73,11 @@ USAGE:
    OPTIONAL flags are denoted by a [] bracket.
 
 OPTIONS:
-   --privateKey value, -p value, --prvKey value                                                                The Astra private key [$PRIVATE_KEY]
-   --operator value                                                                                            The address of the operator (default: "astra10y496hn28u6j8z80wuqvclta4jt9zcp7jfzqwa")
-   --allowedList bonded, --allowed bonded                                                                      The list of allowed validator addresses (default: all bonded validators). Example: `--allowed VALIDATOR_1 --allowed VALIDATOR_2`
-   --deniedList --denied VALIDATOR_1 --denied VALIDATOR_2, --denied --denied VALIDATOR_1 --denied VALIDATOR_2  The list of denied validator addresses (default: no denied validators). Example: --denied VALIDATOR_1 --denied VALIDATOR_2
-   --expired value, --exp value                                                                                The expiration duration (e.g, 1000s) (default: "87600h0m0s")
+   --privateKey value, -p value, --prvKey value  The Astra private key [$PRIVATE_KEY]
+   --operator value                              The address of the operator (default: "astra10y496hn28u6j8z80wuqvclta4jt9zcp7jfzqwa")
+   --allowedList bonded, --allowed bonded        The list of allowed validator addresses (default: all bonded validators). Example: --allowed VALIDATOR_1 --allowed VALIDATOR_2
+   --deniedList value, --denied value            The list of denied validator addresses (default: no denied validators). Example: --denied VALIDATOR_1 --denied VALIDATOR_2
+   --expired value, --exp value                  The expiration duration (e.g, 1000s) (default: "87600h0m0s")
    
 ```
 
