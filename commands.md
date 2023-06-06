@@ -61,7 +61,7 @@ DESCRIPTION:
 ```
 
 #### compound_register
-Register to the compound service
+This command helps register to the compound service. It basically creates a transaction composing of two following `sdk.Msg`s: MsgWithdrawDelegationReward, MsgDelegate. This helps authorize the compound operator to perform compounding on behalf of the user.
 ```shell
 $ atstella-cli compound help register
 NAME:
@@ -71,6 +71,9 @@ USAGE:
    compound register --privateKey PRIVATE_KEY [--operator OPERATOR] [--allowedList ALLOWED_LIST] [--deniedList DENIED_LIST] [--expired EXPIRED]
 
    OPTIONAL flags are denoted by a [] bracket.
+
+DESCRIPTION:
+   This command helps register to the compound service. It basically creates a transaction composing of two following `sdk.Msg`s: MsgWithdrawDelegationReward, MsgDelegate. This helps authorize the compound operator to perform compounding on behalf of the user.
 
 OPTIONS:
    --privateKey value, -p value, --prvKey value  The Astra private key [$PRIVATE_KEY]
@@ -82,7 +85,7 @@ OPTIONS:
 ```
 
 #### compound_unregister
-Unregister from the compound service
+This command helps un-register from the compound service. It basically revokes compound-related authorizations granted before.
 ```shell
 $ atstella-cli compound help unregister
 NAME:
@@ -92,6 +95,9 @@ USAGE:
    compound unregister --privateKey PRIVATE_KEY [--operator OPERATOR]
 
    OPTIONAL flags are denoted by a [] bracket.
+
+DESCRIPTION:
+   This command helps un-register from the compound service. It basically revokes compound-related authorizations granted before.
 
 OPTIONS:
    --privateKey value, -p value, --prvKey value  The Astra private key [$PRIVATE_KEY]

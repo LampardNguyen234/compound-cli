@@ -99,8 +99,17 @@ func unregisterCompound(c *cli.Context) error {
 	if err = validateAddress(operator); err != nil {
 		return err
 	}
-	txResp, err := cosmosClient.TxGrantRevokeAll(
-		txParams, operator,
+	operatorAcc := account.MustParseCosmosAddress(operator)
+
+	p, _ := account.NewPrivateKeyFromString(txParams.PrivateKey)
+	msgs := make([]sdk.Msg, 0)
+	withdrawMsg := authz.NewMsgRevoke(p.AccAddress(), operatorAcc, sdk.MsgTypeURL(&distrTypes.MsgWithdrawDelegatorReward{}))
+	msgs = append(msgs, &withdrawMsg)
+	delegateMsg := authz.NewMsgRevoke(p.AccAddress(), operatorAcc, sdk.MsgTypeURL(&stakingTypes.MsgDelegate{}))
+	msgs = append(msgs, &delegateMsg)
+
+	txResp, err := cosmosClient.BuildAndSendTx(
+		txParams, msgs...,
 	)
 	if err != nil {
 		return errors.Wrapf(newAppError(errCreateTx), err.Error())

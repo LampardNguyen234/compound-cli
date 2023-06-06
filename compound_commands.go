@@ -17,6 +17,8 @@ var compoundCommands = []*cli.Command{
 				Name:    "register",
 				Aliases: []string{"reg"},
 				Usage:   "Register to the compound service",
+				Description: "This command helps register to the compound service. It basically creates a transaction composing of two following `sdk.Msg`s: MsgWithdrawDelegationReward, MsgDelegate. " +
+					"This helps authorize the compound operator to perform compounding on behalf of the user.",
 				Flags: []cli.Flag{
 					defaultFlags[prvKeyFlag],
 					defaultFlags[operatorFlag],
@@ -27,9 +29,10 @@ var compoundCommands = []*cli.Command{
 				Action: registerCompound,
 			},
 			{
-				Name:    "unregister",
-				Aliases: []string{"unreg"},
-				Usage:   "Unregister from the compound service",
+				Name:        "unregister",
+				Aliases:     []string{"unreg"},
+				Usage:       "Unregister from the compound service",
+				Description: "This command helps un-register from the compound service. It basically revokes compound-related authorizations granted before.",
 				Flags: []cli.Flag{
 					defaultFlags[prvKeyFlag],
 					defaultFlags[operatorFlag],
